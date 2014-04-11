@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+  <title>Instant Replay</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .hover {
+      width: 200px;
+      height: 200px;
+      background-color: green;
+      color: white;
+    }
+    .hover:hover {
+      color: black;
+      background-color: yellow;
+    }
+  </style>
+  <script src="jquery-2.1.0.js"></script>
+</head>
+<body>
+  <button id="button">Click Me</button>
+  <button id="record">Record</button>
+  <button id="play">Play</button>
+  <div class="hover">Hover Me</div>
+
+  <script src="instant-replay.js"></script>
+
+  <script>
+
+    var btn = document.getElementById("button");
+    btn.onclick = function(e) {
+      e.stopPropagation();
+      console.log("button clicked (index)");
+    };
+
+    $("#record").click(function() { InstantReplay.record(); });
+    $("#play").click(function() { InstantReplay.play(); });
+
+  </script>
+</body>
+</html>
